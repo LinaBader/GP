@@ -11,9 +11,9 @@ package SS;
 public class show extends media {
     private int NumOfSeasons;
     private int NumOfEpisodes;
-    private episod[] episodelist= new episod[NumOfEpisodes];
+    private episode[] episodelist= new episode[NumOfEpisodes];
 
-    public show(int NumOfSeasons, int NumOfEpisods, episod[] episodlist, String name, String genre, String ageRating) {
+    public show(int NumOfSeasons, int NumOfEpisods, episode[] episodlist, String name, String genre, String ageRating) {
         super(name, genre, ageRating);
         this.NumOfSeasons = NumOfSeasons;
         this.NumOfEpisodes = NumOfEpisods;
@@ -36,15 +36,15 @@ public class show extends media {
         this.NumOfEpisodes = NumOfEpisods;
     }
 
-    public episod[] getEpisodelist() {
+    public episode[] getEpisodelist() {
         return episodelist;
     }
 
-    public void setEpisodelist(episod[] episodlist) {
+    public void setEpisodelist(episode[] episodlist) {
         this.episodelist = episodlist;
     }
     public void displayEpisodlist(){
-        for (episod e : episodelist) {
+        for (episode e : episodelist) {
             System.out.println(e);
         }
     }

@@ -8,12 +8,12 @@ package SS;
  *
  * @author leena
  */
-public class episod {
+public class episode {
     private String name;
     private int lengthInMin;
     private int season;
 
-    public episod(String name, int lengthInMin, int season) {
+    public episode(String name, int lengthInMin, int season) {
         this.name = name;
         this.lengthInMin = lengthInMin;
         this.season = season;
