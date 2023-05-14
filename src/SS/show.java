@@ -10,14 +10,14 @@ package SS;
  */
 public class show extends media {
     private int NumOfSeasons;
-    private int NumOfEpisods;
-    private episod[] episodlist;
+    private int NumOfEpisodes;
+    private episod[] episodelist= new episod[NumOfEpisodes];
 
     public show(int NumOfSeasons, int NumOfEpisods, episod[] episodlist, String name, String genre, String ageRating) {
         super(name, genre, ageRating);
         this.NumOfSeasons = NumOfSeasons;
-        this.NumOfEpisods = NumOfEpisods;
-        this.episodlist = episodlist;
+        this.NumOfEpisodes = NumOfEpisods;
+        this.episodelist = episodlist;
     }
 
     public int getNumOfSeasons() {
@@ -28,23 +28,27 @@ public class show extends media {
         this.NumOfSeasons = NumOfSeasons;
     }
 
-    public int getNumOfEpisods() {
-        return NumOfEpisods;
+    public int getNumOfEpisodes() {
+        return NumOfEpisodes;
     }
 
-    public void setNumOfEpisods(int NumOfEpisods) {
-        this.NumOfEpisods = NumOfEpisods;
+    public void setNumOfEpisodes(int NumOfEpisods) {
+        this.NumOfEpisodes = NumOfEpisods;
     }
 
-    public episod[] getEpisodlist() {
-        return episodlist;
+    public episod[] getEpisodelist() {
+        return episodelist;
     }
 
-    public void setEpisodlist(episod[] episodlist) {
-        this.episodlist = episodlist;
+    public void setEpisodelist(episod[] episodlist) {
+        this.episodelist = episodlist;
     }
-    
+    public void displayEpisodlist(){
+        for (episod e : episodelist) {
+            System.out.println(e);
+        }
+    }
     @Override
     public String toString() {
-        return "show title" +super.getName()+"age rating: "+ super.getAgeRating()+"\ngenre:"+super.getGenre()+"Seasons:" + NumOfSeasons + ", Episods:" + NumOfEpisods ;
+        return "show title" +super.getName()+"age rating: "+ super.getAgeRating()+"\ngenre:"+super.getGenre()+"Seasons:" + NumOfSeasons + ", Episods:" + NumOfEpisodes ;
 }}
