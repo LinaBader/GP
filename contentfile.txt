@@ -1,0 +1,6 @@
+show title: Moon Knight, age rating: TV-14, genre: action and fantsy, Seasons:1, Episods:6
+show title: Ms. Marvel, age rating: TV-14, genre: adventure comdy, Seasons:1, Episods:6
+movie title: Uncharted, age rating: PG-13, genre: action, length: 110m
+movie title: tangle, age rating: PG, genre: family comdy, length: 100m
+movie title: Taylor Swift reputation Studium Tour, age rating: PG-12, genre: concert documenary, length: 125m
+movie title: The Princess Diaries, age rating: PG-12, genre: romcom, length: 120m

@@ -26,7 +26,7 @@ public final class movie extends media {
 
     @Override
     public String toString() {
-        return String.format("movie title: %s, age rating: %s \ngenre: %s, length: %dm", super.getName(), super.getAgeRating(),super.getGenre(),lengthInMin);
+        return String.format("movie title: %s, age rating: %s, genre: %s, length: %dm", super.getName(), super.getAgeRating(),super.getGenre(),lengthInMin);
     }
     
 }

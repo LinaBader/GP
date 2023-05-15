@@ -50,5 +50,5 @@ public class show extends media {
     }
     @Override
     public String toString() {
-        return "show title" +super.getName()+"age rating: "+ super.getAgeRating()+"\ngenre:"+super.getGenre()+"Seasons:" + NumOfSeasons + ", Episods:" + NumOfEpisodes ;
+        return "show title: " +super.getName()+", age rating: "+ super.getAgeRating()+", genre: "+super.getGenre()+", Seasons:" + NumOfSeasons + ", Episods:" + NumOfEpisodes ;
 }}

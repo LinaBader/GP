@@ -20,7 +20,7 @@ public class subscription implements payable{
         this.account = account;
         this.startdate = startdate;
         this.enddate = enddate;
-        lengthInMon=(this.enddate.getMonth())-(this.startdate.getMonth());
+        setLengthInMon();
     }
 
     public account getAccount() {
@@ -29,6 +29,10 @@ public class subscription implements payable{
 
     public void setAccount(account account) {
         this.account = account;
+    }
+    
+    public void setLengthInMon(){
+        lengthInMon=((this.enddate.getYear()-this.startdate.getYear())*12+this.enddate.getMonth())-(this.startdate.getMonth());
     }
 
     public int getLengthInMon() {

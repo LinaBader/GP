@@ -13,12 +13,17 @@ import java.util.ArrayList;
 public class account {
     private String username ;
     private String password ;
-    private static media[] content ;
+    private static media[] content = new media[6];
     private ArrayList<media> watchList;
+
+    public account() {
+        setContent();
+    }
 
     public account(String username, String password) {
         this.username = username;
         this.password = password;
+        setContent();
     }
 
     public String getUsername() {
@@ -41,8 +46,15 @@ public class account {
         return content;
     }
 
-    public static void setContent(media[] content) {
-        account.content = content;
+    public static void setContent() {
+        episode[] moonknightElist={new episode("the goldfish problem",47,1), new episode("summon the suit", 52,1), new episode("the friendly type",52,1), new episode("the tomb", 51,1), new episode("asylum",47,1), new episode("gods and monsters",43,1)};
+        content[0]= new show(1,6,moonknightElist,"Moon Knight","action and fantsy","TV-14");
+        episode[] msmarvelElist ={new episode("generation why",47,1), new episode("crushed",49,1), new episode("destined",45,1), new episode("seeing red",46,1),new episode("time and again",38,1), new episode("no normal",47,1)};
+        content[1]= new show(1,6,msmarvelElist,"Ms. Marvel","adventure comdy","TV-14");
+        content[2]= new movie(110,"Uncharted","action","PG-13");
+        content[3]= new movie(100,"tangle","family comdy", "PG");
+        content[4]= new movie(125,"Taylor Swift reputation Studium Tour","concert documenary","PG-12");
+        content[5]= new movie(120, "The Princess Diaries", "romcom","PG-12");
     }
 
     public ArrayList<media> getWatchList() {
