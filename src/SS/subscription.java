@@ -4,6 +4,9 @@
  */
 package SS;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  *
  * @author leena
@@ -69,9 +72,19 @@ public class subscription implements payable{
 }
     
     public final void confirm(){
+        Scanner input = new Scanner(System.in);
         pay(calcprice());
+        try{
+            System.out.println("do you want to confirm the subscription/payment? yes/no");
+            String answer = input.next();
+            if(answer=="yes"){
         status="valid till"+enddate.toString();
-        System.out.println("payment confirmed "+status+"\nthank you :)");
+        System.out.println("payment confirmed "+status+"\nthank you :)");}
+            else System.out.println("subscripiton has been cancelled thank you for visting the streaming service");
+        }
+        catch(InputMismatchException e){
+            System.err.println("error");
+        }
     }
 @Override
     public String toString(){
