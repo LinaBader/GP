@@ -17,7 +17,11 @@ public class show extends media {
         super(name, genre, ageRating);
         this.NumOfSeasons = NumOfSeasons;
         this.NumOfEpisodes = NumOfEpisods;
+        try{
         this.episodelist = episodlist;
+        } catch(NullPointerException e){
+            System.err.println("the episode list cant be null");
+        }
     }
 
     public int getNumOfSeasons() {
