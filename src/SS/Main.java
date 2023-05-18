@@ -7,6 +7,7 @@ import java.util.*;
 public class Main {
    
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         //saving content in a text file 
         account a= new account();
         writetextfile text= new writetextfile();
@@ -14,16 +15,48 @@ public class Main {
         for(media m: account.getContent())
             text.wriet_file(m);
         text.close_file();  
-        // end
-        signup signup= new signup();
+        // gui (creating account and subscription)
+        signup signup = new signup();
+        signup.setDefaultCloseOperation(signup.HIDE_ON_CLOSE);
         subscription s1 = null;
         while(s1==null){
         signup.setVisible(true);
-        s1=signup.sub; }
-        if(s1!=null)
-        s1.confirm();
-        signup.close();
-        if(s1.getStatus()!=null)
-            System.out.println(s1);
-  }
+        s1=signup.sub; 
+        }
+        
+        // confirmation and closing the gui
+        if(s1!=null){
+            s1.confirm();
+            signup.close();
+        } 
+        // if the user confirms 
+        if(s1.getStatus()!=null){
+            System.out.println("welcome to our streaming service \n"+s1);
+            System.out.println("would you like to view movies or tv shows? m/s");
+            char answer = input.next().charAt(0);
+            switch (answer) {
+                case 'm':
+                    s1.getAccount().displaymovies();
+                    break;
+                case 's':
+                    s1.getAccount().displayshows();
+                    break;
+                default:
+                    System.out.println("sorry that's not an option heres a list of all available content");
+                    readtextfile read = new readtextfile();
+                    read.open_file("contentFile.txt");
+                    read.read_file();
+                    read.close_file();
+                    break;
+            }
+            System.out.println("would you like to add any to your watchlist?\nif yes enter the title");
+            String add = input.next();
+            s1.getAccount().addShowToWatchList(add);
+            
+        }
+        // if they don't 
+        else{
+            System.exit(0);
+        }
+     }
 }

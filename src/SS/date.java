@@ -50,7 +50,7 @@ public class date {
     
     @Override
     public String toString(){
-        return String.format("%dd-%dm=&dy", day, month, year);
+        return String.format("%dd - %dm - %dy", day, month, year);
     }
 
 }

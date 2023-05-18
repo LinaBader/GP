@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class account {
     private String username ;
     private String password ;
-    private static media[] content = new media[6];
-    private ArrayList<media> watchList;
+    private static media[] content = new media[7];
+    private ArrayList<media> watchList= new ArrayList();
 
     public account() {
         setContent();
@@ -55,6 +55,7 @@ public class account {
         content[3]= new movie(100,"tangle","family comdy", "PG");
         content[4]= new movie(125,"Taylor Swift reputation Studium Tour","concert documenary","PG-12");
         content[5]= new movie(120, "The Princess Diaries", "romcom","PG-12");
+        content[6]=new movie(109,"The Devile Wears Prada","drama and comedy","PG-13");
     }
 
     public ArrayList<media> getWatchList() {
@@ -64,7 +65,7 @@ public class account {
     public void setWatchList(ArrayList<media> watchList) {
         this.watchList = watchList;
     }
-     public void displayshows(media cont){
+     public void displayshows(){
        for ( media m: content){
            if(m instanceof show)
                System.out.println(m+"\n-----------------------------------");
@@ -77,12 +78,22 @@ public class account {
        }
     }
      public void addShowToWatchList(String name){
+       int x = 0;
        for(media m: content){
-           if(name.equals(m.getName()))
-               watchList.add(m);
+           String test = m.getName();
+           if (test.equals(name)){
+              watchList.add(m);
+              x=2;
+              break;
+           }
            else 
-               System.out.println("we're sorry this show/movie is unavailable on our streaming service");
-       }      
+               x=1;
+       }
+    if (x==2){
+       System.out.println("show / movie has been added");
+       }
+    else 
+        System.out.println("sorry this show / movie is not available ");
     }
 
 }

@@ -68,7 +68,7 @@ public class subscription implements payable{
     }
     @Override
     public double calcprice() {
-    return (lengthInMon*30)*VAT;   
+    return (lengthInMon*30)+(lengthInMon*30);   
 }
     
     public final void confirm(){
@@ -77,8 +77,8 @@ public class subscription implements payable{
         try{
             System.out.println("do you want to confirm the subscription/payment? yes/no");
             String answer = input.next();
-            if(answer=="yes"){
-        status="valid till"+enddate.toString();
+            if("yes".equals(answer)){
+        status="valid till "+enddate.toString();
         System.out.println("payment confirmed "+status+"\nthank you :)");}
             else System.out.println("subscripiton has been cancelled thank you for visting the streaming service");
         }
